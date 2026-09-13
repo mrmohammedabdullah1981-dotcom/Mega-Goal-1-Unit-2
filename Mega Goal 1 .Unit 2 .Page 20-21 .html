@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Goal 1 - Unit 2: Careers | Al-Bayariq Private Schools</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --success: #15803d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px 10px;
+    }
+
+    .main-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* School Header */
+    .school-header {
+      text-align: center;
+      border-bottom: 3px double var(--primary);
+      padding-bottom: 25px;
+      margin-bottom: 35px;
+    }
+
+    .school-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .school-sub {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 5px 0;
+    }
+
+    .unit-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* Content Sections */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-heading {
+      font-size: 20px;
+      color: var(--primary);
+      border-left: 5px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .text-card {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .text-card h3 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 18px;
+    }
+
+    .arabic-note {
+      direction: rtl;
+      text-align: right;
+      font-size: 15px;
+      color: #334155;
+      background: #ffffff;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border-right: 4px solid var(--accent);
+      margin-top: 10px;
+    }
+
+    /* Vocabulary Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background-color: var(--primary);
+      color: white;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    .data-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .data-table .ar-cell {
+      direction: rtl;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* Qualities Grid */
+    .qualities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .quality-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .quality-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 24px;
+      margin-right: 8px;
+    }
+
+    .quality-name {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 15px;
+    }
+
+    .quality-desc-ar {
+      direction: rtl;
+      text-align: right;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* Interactive Quiz Section */
+    .quiz-box {
+      background: #eff6ff;
+      border: 2px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 1.5px solid #93c5fd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .question-block {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .q-prompt {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .opt-label {
+      display: block;
+      margin: 8px 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .opt-label input {
+      margin-right: 10px;
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 20px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: #1d4ed8;
+    }
+
+    /* Certificate Layout */
+    #certificate {
+      display: none;
+      margin-top: 40px;
+      padding: 40px 30px;
+      background: #fffdfa;
+      border: 12px double var(--accent);
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cert-school {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
+
+    .cert-dept {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin: 4px 0 20px;
+      text-transform: uppercase;
+    }
+
+    .cert-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 10px 0 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cert-body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .cert-student-name {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: underline;
+      margin: 15px 0;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      background: var(--success);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .cert-signatures {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 45px;
+      padding: 0 40px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+    }
+
+    .sig-line {
+      border-top: 1.5px solid var(--text-muted);
+      width: 200px;
+      margin-top: 8px;
+    }
+
+    .print-btn {
+      background: var(--success);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #certificate, #certificate * {
+        visibility: visible;
+      }
+      #certificate {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        border: 10px double var(--accent);
+        display: block !important;
+      }
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+
+  <!-- Header -->
+  <header class="school-header">
+    <div class="school-title">Al-Bayariq Private Schools</div>
+    <div class="school-sub">High School Section | English Language Department</div>
+    <div class="unit-title">Mega Goal 1 &bull; Unit 2: Careers (Pages 20 - 21)</div>
+  </header>
+
+  <!-- 1. Text Analysis -->
+  <section class="section">
+    <div class="section-heading">1. Detailed Lesson Reading & Analysis (Page 20)</div>
+    
+    <div class="text-card">
+      <h3>Introductory Theme: Dream Jobs</h3>
+      <p>"Have you ever wondered how people get really cool jobs? Imagine you've been working at the same job for a long time, and you're getting tired of the daily grind. Maybe you can get inspiration from these lucky people and do something creative and interesting."</p>
+      <div class="arabic-note">
+        <strong>الشرح العربي:</strong> هل تساءلت يوماً كيف يحصل البعض على وظائف ممتعة؟ تخيل أنك تعمل بنفس الوظيفة لفترة طويلة وأصابك الإرهاق والملل من الروتين اليومي الشاق (daily grind). هنا نستلهم من هؤلاء الأشخاص كيف نتحول إلى مهن إبداعية غير تقليدية.
+      </div>
+    </div>
+
+    <div class="text-card">
+      <h3>1. Car Sculptor (Salim Saif - General Motors)</h3>
+      <p>"Working with clay is normally associated with artists, not with the automotive industry. However, some of the world's largest automobile companies have a permanent staff of sculptors to help them make designs for cars and visualize ideas for future products. Salim Saif went to art school and was going to be an artist, but he ended up as a sculptor for General Motors. Salim spends his days using his hands to craft anything from miniature clay models to actual-size car sculptures. He's been working for the company since he left college, and he and his team have helped design the latest models to come off the showroom floor."</p>
+      <div class="arabic-note">
+        <strong>الشرح العربي:</strong> يرتبط العمل بالطين (clay) بالفنانين، لكن شركات السيارات الكبرى توظف نحاتين دائمين لتجسيد وتخيل تصميمات وموديلات المستقبل. درس سالم الفنون وانتهى به المطاف كنحات سيارات في شركة جنرال موتورز (General Motors)، حيث يصنع بيديه مجسمات مصغرة (miniature) ونماذج بالحجم الطبيعي (actual-size) تخرج لصالات العرض.
+      </div>
+    </div>
+
+    <div class="text-card">
+      <h3>2. Food Scientist (Matthew Duval - Tasty's Ice Cream)</h3>
+      <p>"When someone says that he is a laboratory scientist, what immediately comes to your mind? You probably think of a white lab coat, sterile surroundings, a microscope, and test tubes. But that is not the case of Matthew Duval. For the last three years, he's been working as a food scientist for the makers of Tasty's ice cream, and he has created several new flavors. He's constantly searching for new combinations of flavors to keep the products fresh and interesting for the company's customers. In his lab, he experiments with different products and flavors until he gets them just right. And, of course, he always gets to taste the results. One part of Matthew's job involves market research. He's good at presenting his new products to customers and getting their input."</p>
+      <div class="arabic-note">
+        <strong>الشرح العربي:</strong> على عكس الصورة النمطية لعلماء المختبرات (المعطف الأبيض، البيئة المعقمة، والمجهر)، يعمل ماثيو دوفال كعالم أغذية في مصانع مثلجات "تيستيز"، حيث يبتكر ويمزج نكهات جديدة ويقوم بتذوقها بنفسه. كما يقوم بعمل أبحاث السوق (market research) للتواصل مع الزبائن ومعرفة آرائهم وتقييمهم للمنتجات.
+      </div>
+    </div>
+
+    <div class="text-card">
+      <h3>3. Animation Designer</h3>
+      <p>"Animation has been in high demand in advertising, special effects, video games, and films. Animators need to have artistic ability, creativity, storytelling ability, technical skills, scientific and technical knowledge, and the ability to work with others. Animators need to understand character development and be able to portray character emotions in a convincing way. As computer generated imagery (CGI) technology is used in both live action films and animated movies and interactive games, it has become necessary for designers to have scientific and technical knowledge. Animation projects involve many people who work as a team. Clear and effective communication with team members and clients is crucial."</p>
+      <div class="arabic-note">
+        <strong>الشرح العربي:</strong> يشهد مجال التحريك والرسوم المتحركة طلباً متزايداً في الإعلانات، والمؤثرات الخاصة، والألعاب التفاعلية. يتطلب العمل موهبة فنية، وإبداعاً، وبراعة في سرد القصص، وإتقان تقنية الرسومات المنشأة بالحاسوب (CGI). نظراً لضخامة هذه المشاريع، فإن العمل الجماعي والتواصل الفعال (effective communication) مع الفريق والعملاء يُعدان أمراً حاسماً (crucial).
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Vocabulary Table -->
+  <section class="section">
+    <div class="section-heading">2. Vocabulary & Expressions (Pages 20 - 21)</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Word / Phrase</th>
+          <th>Phonetic Note</th>
+          <th class="ar-cell">المعنى بالعربية</th>
+          <th>Contextual Definition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Daily grind</strong></td>
+          <td>/ˈdeɪli ɡraɪnd/</td>
+          <td class="ar-cell">الروتين اليومي المرهق</td>
+          <td>Tiring and repetitive daily work routines.</td>
+        </tr>
+        <tr>
+          <td><strong>Sculptor</strong></td>
+          <td>/ˈskʌlptər/</td>
+          <td class="ar-cell">نحّات</td>
+          <td>An artist who creates solid three-dimensional models.</td>
+        </tr>
+        <tr>
+          <td><strong>Clay</strong></td>
+          <td>/kleɪ/</td>
+          <td class="ar-cell">صلصال / طين تشكيل</td>
+          <td>Heavy sticky material used to craft physical models.</td>
+        </tr>
+        <tr>
+          <td><strong>Miniature</strong></td>
+          <td>/ˈmɪnətʃər/</td>
+          <td class="ar-cell">نموذج مصغّر</td>
+          <td>Represented on a much smaller scale than real life.</td>
+        </tr>
+        <tr>
+          <td><strong>Actual-size</strong></td>
+          <td>/ˈæktʃuəl saɪz/</td>
+          <td class="ar-cell">بالحجم الفعلي / الكامل</td>
+          <td>The exact real-world dimensions of the finished product.</td>
+        </tr>
+        <tr>
+          <td><strong>Showroom floor</strong></td>
+          <td>/ˈʃoʊruːm flɔːr/</td>
+          <td class="ar-cell">صالة عرض الموديلات</td>
+          <td>A designated commercial room for presenting cars to buyers.</td>
+        </tr>
+        <tr>
+          <td><strong>Sterile surroundings</strong></td>
+          <td>/ˈstɛraɪl səˈraʊndɪŋz/</td>
+          <td class="ar-cell">بيئة معقمة ومطهرة</td>
+          <td>Completely clean environment free from bacteria.</td>
+        </tr>
+        <tr>
+          <td><strong>Market research</strong></td>
+          <td>/ˈmɑːrkɪt rɪˈsɜːrtʃ/</td>
+          <td class="ar-cell">أبحاث ودراسات السوق</td>
+          <td>Gathering information about consumers' needs and preferences.</td>
+        </tr>
+        <tr>
+          <td><strong>Customer input</strong></td>
+          <td>/ˈkʌstəmər ˈɪnpʊt/</td>
+          <td class="ar-cell">آراء وملاحظات الزبائن</td>
+          <td>Feedback, opinions, and suggestions delivered by clients.</td>
+        </tr>
+        <tr>
+          <td><strong>Portray</strong></td>
+          <td>/pɔːrˈtreɪ/</td>
+          <td class="ar-cell">يجسّد / يصور</td>
+          <td>To depict or show character emotions realistically.</td>
+        </tr>
+        <tr>
+          <td><strong>Convincing</strong></td>
+          <td>/kənˈvɪnsɪŋ/</td>
+          <td class="ar-cell">مقنع ومؤثر</td>
+          <td>Able to make somebody believe that something is true/real.</td>
+        </tr>
+        <tr>
+          <td><strong>Crucial</strong></td>
+          <td>/ˈkruːʃəl/</td>
+          <td class="ar-cell">حاسم / في غاية الأهمية</td>
+          <td>Extremely important or decisive for success.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. Top Twelve Qualities -->
+  <section class="section">
+    <div class="section-heading">3. Top Twelve Qualities Employers Look for (Page 21)</div>
+    <div class="qualities-grid">
+      <div class="quality-box">
+        <span class="quality-num">1</span>
+        <span class="quality-name">Communication skills</span>
+        <div class="quality-desc-ar">التواصل الفعال شفهياً وكتابياً مع العملاء والزملاء.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">2</span>
+        <span class="quality-name">Honesty / Integrity</span>
+        <div class="quality-desc-ar">الأمانة والنزاهة والتمسك بالمبادئ والقيم الأخلاقية.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">3</span>
+        <span class="quality-name">Teamwork skills</span>
+        <div class="quality-desc-ar">العمل بروح الفريق الواحد والتعاون المثمر لإنجاز الأهداف.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">4</span>
+        <span class="quality-name">Interpersonal skills</span>
+        <div class="quality-desc-ar">مهارات التعامل الذكي وبناء العلاقات الإيجابية مع الآخرين.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">5</span>
+        <span class="quality-name">Strong work ethic</span>
+        <div class="quality-desc-ar">الانضباط، الإخلاص، الحضور في الوقت، وإتقان العمل.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">6</span>
+        <span class="quality-name">Motivation / Initiative</span>
+        <div class="quality-desc-ar">الدافعية الذاتية والبدء بالمهام دون انتظار تعليمات الآخرين.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">7</span>
+        <span class="quality-name">Flexibility / Adaptability</span>
+        <div class="quality-desc-ar">المرونة وسرعة التأقلم مع متطلبات وبيئات العمل الجديدة.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">8</span>
+        <span class="quality-name">Analytical skills</span>
+        <div class="quality-desc-ar">التفكير التحليلي المنطقي والقدرة على قراءة البيانات.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">9</span>
+        <span class="quality-name">Computer skills</span>
+        <div class="quality-desc-ar">إجادة البرمجيات، والأنظمة الرقمية، وتكنولوجيا الحاسوب.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">10</span>
+        <span class="quality-name">Organizational skills</span>
+        <div class="quality-desc-ar">ترتيب المهام وتحديد الأولويات والعمل بكفاءة ونظام.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">11</span>
+        <span class="quality-name">Time management skills</span>
+        <div class="quality-desc-ar">تنظيم الأوقات وتسليم المهام قبل انتهاء المواعيد النهائية.</div>
+      </div>
+      <div class="quality-box">
+        <span class="quality-num">12</span>
+        <span class="quality-name">Critical thinking & Problem solving</span>
+        <div class="quality-desc-ar">التفكير الناقد وابتكار الحلول المنطقية للمعضلات وتحديات العمل.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Textbook Solutions -->
+  <section class="section">
+    <div class="section-heading">4. Textbook Exercises Solutions (Page 21)</div>
+    <div class="text-card">
+      <h3>Quick Check - B. Comprehension (True / False)</h3>
+      <ol>
+        <li><strong>Salim works as a car driver.</strong> &rarr; <span style="color:#b91c1c; font-weight:bold;">False</span> (He is a car sculptor for General Motors).</li>
+        <li><strong>He's been working for an auto company since he left school.</strong> &rarr; <span style="color:var(--success); font-weight:bold;">True</span>.</li>
+        <li><strong>Matthew has created several new flavors of yogurt.</strong> &rarr; <span style="color:#b91c1c; font-weight:bold;">False</span> (He creates flavors of ice cream for Tasty's).</li>
+        <li><strong>Matthew enjoys presenting his new products to customers.</strong> &rarr; <span style="color:var(--success); font-weight:bold;">True</span>.</li>
+        <li><strong>Animators usually work alone on their creative projects.</strong> &rarr; <span style="color:#b91c1c; font-weight:bold;">False</span> (They work in large teams with clear communication).</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. Interactive Test & Certificate -->
+  <section class="section">
+    <div class="section-heading">5. Student Evaluation Test (Pages 20 - 21)</div>
+    
+    <div class="quiz-box">
+      <div class="input-group">
+        <label for="studentNameInput">Enter Your Full Name (Student Name):</label>
+        <input type="text" id="studentNameInput" placeholder="e.g. Abdullah Ahmed Al-Ghamdi" required>
+      </div>
+
+      <form id="assessmentForm">
+        <!-- Q1 -->
+        <div class="question-block">
+          <div class="q-prompt">1. Salim Saif uses __________ to sculpt car models for General Motors.</div>
+          <label class="opt-label"><input type="radio" name="q1" value="A"> A) marble</label>
+          <label class="opt-label"><input type="radio" name="q1" value="B"> B) clay</label>
+          <label class="opt-label"><input type="radio" name="q1" value="C"> C) glass</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-block">
+          <div class="q-prompt">2. Matthew Duval creates innovative flavors for __________ products.</div>
+          <label class="opt-label"><input type="radio" name="q2" value="A"> A) ice cream</label>
+          <label class="opt-label"><input type="radio" name="q2" value="B"> B) bakery</label>
+          <label class="opt-label"><input type="radio" name="q2" value="C"> C) soda</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-block">
+          <div class="q-prompt">3. The technology abbreviation "CGI" stands for:</div>
+          <label class="opt-label"><input type="radio" name="q3" value="A"> A) Central Gaming Information</label>
+          <label class="opt-label"><input type="radio" name="q3" value="B"> B) Computer Global Internet</label>
+          <label class="opt-label"><input type="radio" name="q3" value="C"> C) Computer Generated Imagery</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-block">
+          <div class="q-prompt">4. Starting new tasks and finding solutions independently without waiting for instructions is:</div>
+          <label class="opt-label"><input type="radio" name="q4" value="A"> A) Motivation / Initiative</label>
+          <label class="opt-label"><input type="radio" name="q4" value="B"> B) Time management</label>
+          <label class="opt-label"><input type="radio" name="q4" value="C"> C) Technical knowledge</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-block">
+          <div class="q-prompt">5. Being truthful, keeping company confidences, and upholding high moral standards is:</div>
+          <label class="opt-label"><input type="radio" name="q5" value="A"> A) Interpersonal skills</label>
+          <label class="opt-label"><input type="radio" name="q5" value="B"> B) Honesty / Integrity</label>
+          <label class="opt-label"><input type="radio" name="q5" value="C"> C) Adaptability</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-block">
+          <div class="q-prompt">6. Adjusting readily to changes in schedule, team roles, or working conditions is:</div>
+          <label class="opt-label"><input type="radio" name="q6" value="A"> A) Flexibility / Adaptability</label>
+          <label class="opt-label"><input type="radio" name="q6" value="B"> B) Analytical skills</label>
+          <label class="opt-label"><input type="radio" name="q6" value="C"> C) Storytelling ability</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-block">
+          <div class="q-prompt">7. Meeting deadlines and prioritizing daily assignments systematically is:</div>
+          <label class="opt-label"><input type="radio" name="q7" value="A"> A) Creativity</label>
+          <label class="opt-label"><input type="radio" name="q7" value="B"> B) Time management skills</label>
+          <label class="opt-label"><input type="radio" name="q7" value="C"> C) Craftsmanship</label>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-block">
+          <div class="q-prompt">8. Salim's sculpted car designs are made from miniature models up to __________ car sculptures.</div>
+          <label class="opt-label"><input type="radio" name="q8" value="A"> A) actual-size</label>
+          <label class="opt-label"><input type="radio" name="q8" value="B"> B) toy-size</label>
+          <label class="opt-label"><input type="radio" name="q8" value="C"> C) microscopic</label>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="evaluateQuiz()">Submit Test & Issue Certificate</button>
+      </form>
+
+      <!-- Certificate Presentation -->
+      <div id="certificate">
+        <div class="cert-school">Al-Bayariq Private Schools</div>
+        <div class="cert-dept">High School Section &bull; English Language Department</div>
+        <div class="cert-title">Certificate of Achievement</div>
+        
+        <div class="cert-body">
+          This is to officially certify that the high school student:
+          <div class="cert-student-name" id="displayStudentName">Student Name</div>
+          has successfully demonstrated proficiency in the curriculum assessment for:
+          <br>
+          <strong>Mega Goal 1 &bull; Unit 2: Careers (Dream Jobs & Top Twelve Qualities)</strong>
+          <br><br>
+          Achieved Score: <span class="cert-badge" id="displayScore">0 / 8 (0%)</span>
+          <br>
+          Academic Rating: <strong id="displayRating" style="color:var(--accent);">Excellent</strong>
+        </div>
+
+        <div class="cert-signatures">
+          <div>
+            Date of Completion
+            <div class="sig-line" id="displayDate">--/--/----</div>
+          </div>
+          <div>
+            English Language Department
+            <div class="sig-line">Al-Bayariq Private Schools</div>
+          </div>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">Print Official Certificate (PDF)</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  function evaluateQuiz() {
+    const studentName = document.getElementById('studentNameInput').value.trim();
+    if (!studentName) {
+      alert("Please enter the student's full name before submitting.");
+      document.getElementById('studentNameInput').focus();
+      return;
+    }
+
+    const answerKey = {
+      q1: "B",
+      q2: "A",
+      q3: "C",
+      q4: "A",
+      q5: "B",
+      q6: "A",
+      q7: "B",
+      q8: "A"
+    };
+
+    let score = 0;
+    const totalQuestions = Object.keys(answerKey).length;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      if (selected && selected.value === answerKey[`q${i}`]) {
+        score++;
+      }
+    }
+
+    const percentage = Math.round((score / totalQuestions) * 100);
+    let rating = "";
+    if (percentage >= 90) rating = "Excellent (Honors)";
+    else if (percentage >= 75) rating = "Very Good";
+    else if (percentage >= 50) rating = "Good";
+    else rating = "Needs Review";
+
+    // Populate Certificate Fields
+    document.getElementById('displayStudentName').innerText = studentName;
+    document.getElementById('displayScore').innerText = `${score} / ${totalQuestions} (${percentage}%)`;
+    document.getElementById('displayRating').innerText = rating;
+    document.getElementById('displayDate').innerText = new Date().toLocaleDateString('en-GB');
+
+    // Display Certificate
+    const cert = document.getElementById('certificate');
+    cert.style.display = 'block';
+    cert.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
